@@ -86,3 +86,5 @@ Employee.delete = function (id, result) {
 };
 
 module.exports = Employee;
+
+//  "start": "nodemon server"
