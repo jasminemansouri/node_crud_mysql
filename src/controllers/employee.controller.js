@@ -33,7 +33,7 @@ exports.findById = function(req, res) {
     Employee.findById(req.params.id, function(err, employee) {
         if (err)
         res.send(err);
-        res.json(employee);
+        res.json(employee[0]);
     });
 };
 
