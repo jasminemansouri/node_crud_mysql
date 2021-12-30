@@ -4,11 +4,15 @@ const Employee = require('../models/employee.model');
 
 exports.findAll = function(req, res) {
   Employee.findAll(function(err, employee) {
-    console.log('controller')
+    // console.log('controller')
     if (err)
     res.send(err);
     console.log('res', employee);
-    res.send(employee);
+    // res.send(employee);
+    res.send({  "draw": 1,
+    "recordsTotal": 4,
+    "recordsFiltered": 4,
+    "data": employee });
   });
 };
 
