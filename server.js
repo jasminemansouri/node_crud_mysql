@@ -9,7 +9,7 @@ const port = process.env.PORT || 5000;
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Request-Method", "*");
+  res.setHeader("Access-Control-Allow-Methods", "*");
   res.setHeader("Access-Control-Allow-Headers", "*");
   next();
 });
@@ -36,3 +36,4 @@ app.use("/api/v1/employees", employeeRoutes);
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
 });
+
