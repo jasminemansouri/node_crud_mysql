@@ -8,11 +8,11 @@ exports.findAll = function(req, res) {
     if (err)
     res.send(err);
     console.log('res', employee);
-    // res.send(employee);
-    res.send({  "draw": 1,
-    "recordsTotal": 4,
-    "recordsFiltered": 4,
-    "data": employee });
+    res.send(employee);
+    // res.send({  "draw": 1,
+    // "recordsTotal": 4,
+    // "recordsFiltered": 4,
+    // "data": employee });
   });
 };
 
