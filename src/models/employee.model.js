@@ -74,8 +74,10 @@ Employee.update = function (id, employee, result) {
     }
   );
 };
+
 Employee.delete = function (id, result) {
   dbConn.query("DELETE FROM employees WHERE id = ?", [id], function (err, res) {
+    console.log(`DELETE FROM employees WHERE id =${id}`)
     if (err) {
       console.log("error: ", err);
       result(null, err);
