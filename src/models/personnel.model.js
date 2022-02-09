@@ -12,16 +12,16 @@ var Personnel = function (personnel) {
 };
 
 Personnel.findAll = function (result) {
-    dbConn.query("select * from personnel", function (err, res) {
-      if (err) {
-        console.log("error: ", err);
-        result(null, err);
-      } else {
-        console.log("personnel : ", res);
-        result(null, res);
-      }
-    });
-  };
+  dbConn.query("select * from personnel", function (err, res) {
+    if (err) {
+      console.log("error: ", err);
+      result(null, err);
+    } else {
+      console.log("personnel : ", res);
+      result(null, res);
+    }
+  });
+};
 
 Personnel.create = function (newPers, result) {
   dbConn.query("INSERT INTO personnel set ?", newPers, function (err, res) {
@@ -35,7 +35,22 @@ Personnel.create = function (newPers, result) {
   });
 };
 
-  
+Personnel.findById = function (id, result) {
+  dbConn.query(
+    "Select * from personnel where id = ? ",
+    id,
+    function (err, res) {
+      if (err) {
+        console.log("error: ", err);
+        result(err, null);
+      } else {
+        result(null, res);
+      }
+    }
+  );
+};
+
+
 module.exports = Personnel;
 
 

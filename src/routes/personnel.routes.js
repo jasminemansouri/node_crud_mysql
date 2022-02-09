@@ -9,7 +9,7 @@ router.get('/', personnelController.findAll);
 router.post('/', personnelController.create);
 
 // // Retrieve a single personnel with id
-// router.get('/:id', personnelController.findById);
+router.get('/:id', personnelController.findById);
 
 // // Update a personnel with id
 // router.put('/:id', personnelController.update);
