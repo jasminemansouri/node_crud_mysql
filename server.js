@@ -26,10 +26,13 @@ app.get("/", (req, res) => {
 
 // Require employee routes
 const employeeRoutes = require("./src/routes/employee.routes");
+const personnelRoutes = require("./src/routes/personnel.routes");
 // const testRoutes = require("./src/routes/test.routes");
 
 // using as middleware
 app.use("/api/v1/employees", employeeRoutes);
+app.use("/api/v1/personnel", personnelRoutes);
+
 // app.use("/api/v1/test", testRoutes);
 
 // listen for requests
