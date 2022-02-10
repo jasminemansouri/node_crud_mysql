@@ -37,3 +37,25 @@ exports.findById = function (req, res) {
     res.json(personnel[0]);
   });
 };
+
+exports.update = function(req, res) {
+    
+  if(req.body.constructor === Object && Object.keys(req.body).length === 0){
+      res.status(400).send({ success:false, message: 'Please provide all required field' });
+  }else{
+      Personnel.update(req.params.id, new Personnel(req.body), function(err, personnel) {
+          if (err)
+          res.send(err);
+          res.json({ success:true, message: 'Personnel successfully updated' });
+      });
+  }
+
+};
+
+exports.delete = function(req, res) {
+  Personnel.delete( req.params.id, function(err, personnel) {
+    if (err)
+    res.send(err);
+    res.json({ success:true, message: 'Personnel successfully deleted' });
+  });
+};

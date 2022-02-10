@@ -12,9 +12,9 @@ router.post('/', personnelController.create);
 router.get('/:id', personnelController.findById);
 
 // // Update a personnel with id
-// router.put('/:id', personnelController.update);
+router.put('/:id', personnelController.update);
 
 // // Delete a personnel with id
-// router.delete('/:id', personnelController.delete);
+router.delete('/:id', personnelController.delete);
 
 module.exports = router

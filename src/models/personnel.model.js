@@ -50,6 +50,39 @@ Personnel.findById = function (id, result) {
   );
 };
 
+Personnel.update = function (id, personnel, result) {
+  dbConn.query(
+    "UPDATE personnel SET matricule=?,nom=?,prenom=?,grade=? WHERE id = ?",
+    [
+      personnel.matricule,
+      personnel.nom,
+      personnel.prenom,
+      personnel.grade,
+      id,
+    ],
+    function (err, res) {
+      if (err) {
+        console.log("error: ", err);
+        result(null, err);
+      } else {
+        result(null, res);
+      }
+    }
+  );
+};
+
+Personnel.delete = function (id, result) {
+  dbConn.query("DELETE FROM personnel WHERE id = ?", [id], function (err, res) {
+    console.log(`DELETE FROM personnel WHERE id =${id}`)
+    if (err) {
+      console.log("error: ", err);
+      result(null, err);
+    } else {
+      result(null, res);
+    }
+  });
+};
+
 
 module.exports = Personnel;
 
