@@ -17,4 +17,5 @@ router.put('/:id', personnelController.update);
 // // Delete a personnel with id
 router.delete('/:id', personnelController.delete);
 
+
 module.exports = router

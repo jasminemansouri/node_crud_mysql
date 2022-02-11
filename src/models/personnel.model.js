@@ -84,6 +84,7 @@ Personnel.delete = function (id, result) {
 };
 
 
+
 module.exports = Personnel;
 
 
